@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        display: grid;
+        justify-content: center;
+        text-transform: capitalize;
+    }
+    .serial {
+        margin: 0px auto;
+        background-color: aqua;
+        width: fit-content;
+        padding: 10px 20px;
+        color: black;
+    }
+    .refresh {
+        margin: 0px auto;
+        background-color: tomato;
+        width: fit-content;
+        padding: 10px 20px;
+        color: black;
+        cursor: pointer;
+        user-select: none;
+        border-radius: 10px;
+    }
+    .refresh:hover {
+        background-color: rgb(249, 126, 104);
+    }
+</style>
+<body>
+    <div class="serial">Serial</div>
+    <h6>get serial number</h6>
+    <div class="refresh">Refresh</div>
+    <script>
+        let serialcont = '123456789qazwsxe dcrfvtgbyhnujmikolp'
+        let x = 10
+        document.querySelector ('.refresh').onclick = function() {
+            let serialNum = ''
+            for(let i= 0 ; i < x; i ++) {
+                serialNum += serialcont[Math.floor(Math.random() * serialcont.length)]
+            }
+            document.querySelector ('.serial').innerHTML = serialNum
+            console.log('ngr')
+        }
+    </script>
+</body>
+</html>
